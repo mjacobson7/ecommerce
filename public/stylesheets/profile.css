@@ -1,0 +1,54 @@
+.profilePage {
+  height: 650px;
+  width: 100%;
+  position: relative;
+  background-color: #F6F6EF;
+}
+
+.changeAccountSettings {
+  border: 1px solid #DEDEDE;
+  background-color: #fff;
+  border-radius: 5px;
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  top: 160px;
+  left: 100px;
+}
+
+.changeAccountSettings h3 {
+  margin-top: 15px;
+  margin-left: 35px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.changeAccountSettings p {
+  margin-left: 10px;
+  display: inline;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.changeAccountSettings button {
+  width: 80px;
+  height: 40px;
+  margin-left: 35px;
+  background-color: #fff;
+  border: 1px solid #DEDEDE;
+  outline: none;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+.changeAccountSettings button:active {
+  color: #fff;
+  background-color: #000;
+}
+
+.changeAccountSettings input {
+  width: 60%;
+  height: 36px;
+  margin-top: 0px;
+  margin-left: 10px;
+  outline: none;
+}

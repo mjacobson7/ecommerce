@@ -1,0 +1,84 @@
+.loginPage {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: #F6F6EF;
+}
+
+.signUp {
+  border: 1px solid #DEDEDE;
+  background-color: #fff;
+  border-radius: 5px;
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  left: 250px;
+  top: 175px;
+}
+
+.loginToAccount {
+  border: 1px solid #DEDEDE;
+  background-color: #fff;
+  border-radius: 5px;
+  height: 250px;
+  width: 400px;
+  position: absolute;
+  right: 300px;
+  top: 225px;
+}
+
+.signUp input {
+  width: 80%;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 35px;
+  outline: none;
+}
+
+.signUp button {
+  width: 80px;
+  height: 40px;
+  margin-left: 35px;
+  background-color: #fff;
+  border: 1px solid #DEDEDE;
+  outline: none;
+}
+
+.signUp button:hover {
+  color: #000;
+  background-color: #dedede;
+}
+
+.signUp h3 {
+  margin-top: 15px;
+  margin-left: 35px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.loginToAccount input {
+  width: 80%;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 35px;
+  outline: none;
+}
+
+.loginToAccount button {
+  width: 80px;
+  height: 40px;
+  margin-left: 35px;
+  background-color: #fff;
+  border: 1px solid #DEDEDE;
+  outline: none;
+}
+
+.loginToAccount button:hover {
+  color: #000;
+  background-color: #dedede;
+}
+
+.loginToAccount h3 {
+  margin-top: 20px;
+  margin-left: 35px;
+  font-family: 'Montserrat', sans-serif;
+}

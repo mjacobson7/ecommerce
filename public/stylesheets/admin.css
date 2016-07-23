@@ -1,0 +1,118 @@
+.adminBody {
+  height: 650px;
+  width: 100%;
+  background-color: #F6F6EF;
+  position: relative;
+}
+
+.addProduct {
+  height: 450px;
+  width: 800px;
+  border: 1px solid #DEDEDE;
+  position: absolute;
+  left: 100px;
+  top: 150px;
+  background-color: #fff;
+}
+
+.addProduct button {
+  width: 80px;
+  height: 40px;
+  margin-left: 35px;
+  background-color: #fff;
+  border: 1px solid #DEDEDE;
+  outline: none;
+}
+
+.addProduct button:active {
+  color: #fff;
+  background-color: #000;
+}
+
+.addProduct input {
+  width: 350px;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 35px;
+  padding: 4px 9px;
+  outline: none;
+}
+
+.addProduct textarea {
+  width: 745px;
+  height: 80px;
+  max-height: 135px;
+  max-width: 745px;
+  margin-top: 5px;
+  margin-left: 35px;
+  padding: 4px 9px;
+  outline: none;
+}
+
+.addProduct h3 {
+  margin-top: 15px;
+  margin-left: 35px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.deleteProduct {
+  height: 450px;
+  width: 400px;
+  border: 1px solid #DEDEDE;
+  position: absolute;
+  right: 100px;
+  top: 150px;
+  background-color: #fff;
+}
+
+.deleteProduct h3 {
+  margin-top: 15px;
+  margin-left: 35px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.productDeleteInput {
+  width: 300px;
+  height: 40px;
+  margin-top: 15px;
+  margin-left: 35px;
+  outline: none;
+}
+
+.addFields {
+    margin-top: 15px;
+}
+
+.addField {
+  width: 80px;
+  height: 40px;
+  margin-left: 35px;
+  background-color: #fff;
+  border: 1px solid #DEDEDE;
+  margin-top: 10px;
+  outline: none;
+}
+
+.addField:active {
+  color: #fff;
+  background-color: #000;
+}
+
+.remove {
+    background: #C76868;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 21px;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px 9px;
+    vertical-align: top;
+    line-height: 100%;
+    margin-top: 15px;
+}
+
+.productDeleteInput {
+    padding: 5px;
+}

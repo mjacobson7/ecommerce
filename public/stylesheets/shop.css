@@ -1,0 +1,53 @@
+body {
+  position: relative;
+}
+
+.productContainer:hover .shopProductTitle {
+  color: red;
+}
+.shopContainer {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: auto;
+  position: absolute;
+  top: 100px;
+  margin-bottom: 50px;
+}
+
+.productContainer {
+  display: block;
+  color: black;
+  background-color: #fff;
+  height: 240px;
+  width: 290px;
+  margin: 30px 15px;
+  float: left;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.productImage {
+  height: 180px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.viewProduct {
+  display: none;
+  color: #ffffff;
+  background-color: black;
+  text-align: center;
+  width: 270px;
+  padding: 10px;
+  position: absolute;
+  bottom: -15px;
+}
+
+.productContainer:hover .viewProduct {
+  display: block;
+}

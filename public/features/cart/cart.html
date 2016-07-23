@@ -1,0 +1,33 @@
+<header-directive></header-directive>
+<div class="cartPage">
+  <div class="cartContainer">
+    <h2>My Cart</h2>
+    <ul class="cartTitleBar">
+      <li class="cartProduct">PRODUCT</li>
+      <li class="cartItem">ITEM</li>
+      <li class="cartQuantity">QUANTITY</li>
+      <li class="cartTotal">TOTAL</li>
+    </ul>
+
+    <div class="itemsInCart" ng-repeat="item in products">
+      <img class="cartItemImage" ng-src="{{item.image1}}" alt=""/>
+      <div class="cartItemName">{{item.title}}</div>
+      <div class="cartItemQuantity">
+        <select class="cartItemQuantityView" name="">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div class="cartItemProductPrice">
+        <h3>{{item.price}}</h3>
+      </div>
+    </div>
+    <h2 class="subTotal">Subtotal: {{subtotal | currency}}</h2>
+    <h4 class="subTotalText"></br></br></br>Discounts, shipping and tax will be calculated in checkout.</h4>
+    <button class='checkOut' type="button" name="button" ng-click="finalizeOrder()">Checkout</button>
+  </div>
+</div>
+<footer-directive></footer-directive>

@@ -1,0 +1,73 @@
+.headerContainer {
+  width: 100%;
+  height: 90px;
+  background-color: rgba(20, 20, 20, 0.8);
+  position: relative;
+  position: fixed;
+  z-index: 1000;
+  margin-right: auto;
+   margin-left: auto;
+   max-width: 100%;
+   min-width: 1000px;
+}
+
+.headerContents {
+  display: inline;
+}
+
+.headerLogo {
+  display: inline;
+}
+
+.headerImage {
+  width: 145px;
+  height: auto;
+  margin-left: 50px;
+}
+
+.headerNavBar li {
+  list-style-type: none;
+  float: left;
+  margin: 10px;
+  padding: 35px;
+}
+
+.headerNavBar li a {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: #A29C9C;
+}
+
+.headerNavBar li .NavBarLinks:hover {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease 0s;
+}
+
+.NavBarButton {
+  padding: 10px 30px;
+  border: 1px solid white;
+}
+
+.NavBarButton:hover {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease 0s;
+}
+
+.headerNavBar {
+  display: inline;
+  position: absolute;
+  right: 110px;
+}
+
+.headerShoppingCart {
+  height: 25px;
+  width: auto;
+}
+
+#cartIcon {
+  position: absolute;
+  bottom: 40px;
+  right: 325px;
+}

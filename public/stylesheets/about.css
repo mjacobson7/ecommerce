@@ -1,0 +1,24 @@
+.aboutBody {
+  height: 700px;
+  width: 100%;
+  background-image: url("../assets/aboutus.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-position: center;
+}
+
+.aboutUsTitle {
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  right: 500px;
+  top: 180px;
+}
+
+.aboutUsText {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    right: 300px;
+    top: 230px;
+    width: 500px;
+}

@@ -1,0 +1,22 @@
+<header-directive></header-directive>
+<div class="loginPage">
+  <div class="signUp">
+    <h3>Create an account</h3> </br>
+    <input type="text" placeholder="Email *" name="name" value="" ng-model="email"> </br></br>
+    <input type="text" placeholder="Name *" name="name" value="" ng-model="name"> </br></br>
+    <input type="password" placeholder="Password * "name="name" value="" ng-model="password1"> </br></br>
+    <input type="password" placeholder="Repeat Password *"name="name" value="" ng-model="password2"> </br></br>
+    <button type="button" name="button" ng-click='signUp(email, name, password1, password2)'>Sign Up</button>
+  </div>
+
+
+
+  <div class="loginToAccount">
+    <h3>Login</h3>
+    <input type="text" placeholder="Email"name="name" value="" ng-model="emailLogin"> </br></br>
+    <input type="password" placeholder="Password"name="name" value="" ng-model="passwordLogin"></br></br>
+    <button type="button" name="button" ng-click="logIn(emailLogin, passwordLogin)">Login</button>
+  </div>
+
+</div>
+<footer-directive></footer-directive>

@@ -1,0 +1,15 @@
+<header-directive></header-directive>
+
+<div class='shopContainer'>
+  <div class="productContainer" ng-repeat="item in data" ng-click='viewProduct(item._id)'>
+    <div class="shopProductTitle">
+      {{item.title}} </br>
+      {{item.price | currency}}
+    </div>
+
+    <img class='productImage' ng-src="{{item.image1}}" alt="" />
+    <div class="viewProduct">View</div>
+  </div>
+</div>
+
+<footer-directive></footer-directive>

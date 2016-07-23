@@ -1,0 +1,13 @@
+body {
+  position: relative;
+}
+
+.footerContainer {
+  height: 40px;
+  width: 100%;
+  background-color: rgba(20, 20, 20, 0.8);
+  z-index: 1000;
+  position: absolute;
+  bottom: 0px;
+  position: fixed;
+}

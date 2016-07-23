@@ -1,0 +1,58 @@
+.homeTitle {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 80px;
+  text-align: center;
+  padding: 280px 280px;
+}
+
+#homeLink {
+  font-family: 'Montserrat', sans-serif;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+#homeLink:hover {
+  color: #000;
+  background-color: #dedede;
+}
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+	    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+    .fullscreen-bg {
+        background: url('../../assets/redwoodstill.jpg') center center / cover no-repeat;
+    }
+
+    .fullscreen-bg__video {
+        display: none;
+    }
+}

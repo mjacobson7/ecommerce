@@ -1,0 +1,16 @@
+<header-directive></header-directive>
+<div class="updateProfilePage">
+<div class="updateProfileSettings">
+  <h3>Change Account Settings</h3> </br>
+  <p>Name:</br> <input type="text" name="name" value="{{user.name}}" ng-model="name"></p></br></br></br>
+  <p>Email:</br> <input type="text" name="name" value="{{user.email}}" ng-model="email"></p></br></br></br>
+  <p>New Password:</br> <input type="password" name="name" value="" ng-model="password1"></p></br></br>
+  <p>Re-enter Password:</br> <input type="password" name="name" value="" ng-model="password2"></p></br></br>
+  <button type="button" name="button" ng-click="updateProfile(name, email, password1, password2, this.user._id)">Update</button>
+  <button type="button" name="button" ng-click="cancel()">Cancel</button>
+</div>
+
+<modal-directive></modal-directive>
+
+</div>
+<footer-directive></footer-directive>

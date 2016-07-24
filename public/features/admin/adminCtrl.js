@@ -1,7 +1,10 @@
 angular.module('myApp')
-  .controller('adminCtrl', function($rootScope, $scope, mainService) {
+  .controller('adminCtrl', function($rootScope, $scope, mainService, alertify) {
 
     $scope.addProduct = function(title, price, description, image1, image2, image3, image4) {
+      if(isNaN(price) || !title || !price || !description || !image1 || !image2 || !image3 || !image4) {
+        alertify.delay(5000).logPosition('bottom right').error('Invalid Inputs');
+      } else {
       var newProduct = {
         title: title,
         price: price,
@@ -21,18 +24,42 @@ angular.module('myApp')
         $scope.description = '';
       });
     };
+    };
 
 
-    $scope.choices = [{id: 'choice1'}];
+    $scope.choices = [{inputId: 'choice1'}];
 
   $scope.addNewChoice = function() {
-    var newItemNo = $scope.choices.length+1;
-    $scope.choices.push({'id':'choice'+newItemNo});
+    for(var i = 0; i < $scope.choices.length; i++) {
+      if($scope.choices[i].inputId === "choice5") {
+         return alertify.delay(5000).logPosition('bottom right').error('You cannot add any more fields!');
+      }
+    }
+        var newItemNo = $scope.choices.length+1;
+        $scope.choices.push({'inputId':'choice'+newItemNo});
   };
 
   $scope.removeChoice = function() {
     var lastItem = $scope.choices.length-1;
     $scope.choices.splice(lastItem);
   };
+
+
+  $scope.deleteMultipleProducts = function(idArr) {
+    console.log(idArr[0].productId)
+    if(!idArr[0].productId) {
+      alertify.delay(5000).logPosition('bottom right').error('Please enter a product ID');
+    } else {
+    for(var i = 0; i < idArr.length; i++) {
+      var idObject = {
+        id: idArr[i].productId
+      }
+      mainService.deleteProduct(idObject.id).then(function(response) {
+        console.log(response);
+      });
+    };
+  };
+};
+
 
   }); //end

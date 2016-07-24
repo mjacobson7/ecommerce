@@ -1,8 +1,19 @@
 angular.module('myApp')
-  .controller('loginCtrl', function($rootScope, $scope, mainService, $state) {
+  .controller('loginCtrl', function($rootScope, $scope, mainService, $state, alertify) {
 
     $scope.signUp = function(email, name, password1, password2) {
-      if(password1 === password2) {
+
+      if(!email && !name && !password1 && !password2) {
+        alertify.delay(5000).logPosition('bottom right').error('Please fill out form');
+      } else if(password1 !== password2) {
+        alertify.delay(5000).logPosition('bottom right').error('Password do not match');
+      } else if(!email) {
+        alertify.delay(5000).logPosition('bottom right').error('Please enter a valid email');
+      } else if(!name) {
+        alertify.delay(5000).logPosition('bottom right').error('Please enter your name');
+      } else if(!password1 || !password2) {
+        alertify.delay(5000).logPosition('bottom right').error('Please enter a password');
+      } else {
         var userSignUpInfo = {
           name: name,
           email: email,
@@ -14,12 +25,18 @@ angular.module('myApp')
           $scope.password1 = '';
           $scope.password2 = '';
         });
-      } else {
-        alert('Passwords do not match!');
-      }
+      };
     };
 
+
     $scope.logIn = function(email, password) {
+      if(!email && !password) {
+        alertify.delay(5000).logPosition('bottom right').error('Please fill out form');
+      } else if(!email) {
+        alertify.delay(5000).logPosition('bottom right').error('Please enter a valid email');
+      } else if(!password) {
+        alertify.delay(5000).logPosition('bottom right').error('Please enter a password');
+      } else {
       var loginCredentials = {
         email: email,
         password: password
@@ -31,10 +48,11 @@ angular.module('myApp')
         $rootScope.user = response.data;
         $scope.user = response.data;
         $state.go('shop');
+        alertify.delay(5000).logPosition('bottom right').success('Welcome back ' + $rootScope.user.name + '!');
       } else {
-        alert('Invalid Credentials!');
+        alertify.delay(5000).logPosition('bottom right').error('Incorrect username or password!');
       }
       })
     };
-
+  };
   }); //end

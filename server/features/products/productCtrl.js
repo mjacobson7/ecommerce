@@ -39,7 +39,13 @@ module.exports = {
   },
 
   deleteProduct: function(req, res) {
-
+    Product.findByIdAndRemove(req.params.id, function(err, result) {
+      if(err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).json(result);
+      }
+    })
   }
 
 };

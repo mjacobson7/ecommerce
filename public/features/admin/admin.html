@@ -17,11 +17,11 @@
     <h3>Delete Product</h3>
 
     <div  ng-repeat="choice in choices">
-      <input class="productDeleteInput" type="text" ng-model="choice.name" name="" placeholder="Product ID *">
-      <button class="remove" ng-show="$last" ng-click="removeChoice()">-</button>
+      <input class="productDeleteInput" type="text" ng-model="choice.productId" name="" placeholder="Product ID *">
+      <button class="remove" ng-click="removeChoice()">-</button>
     </div>
     <button class="addField" ng-click="addNewChoice()">Add Field</button>
-
+    <button class="removeProducts" type="button" name="button" ng-click="deleteMultipleProducts(choices)">Delete</button>
   </div>
 
 

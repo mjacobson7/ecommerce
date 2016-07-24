@@ -1,6 +1,16 @@
 angular.module('myApp')
   .service('mainService', function($http) {
 
+    this.deleteProduct = function(id) {
+      console.log(id);
+      return $http ({
+        method: 'DELETE',
+        url: '/api/deleteproduct/' + id
+      }).then(function(response) {
+        return response;
+      })
+    };
+
     this.getCartItems = function(id) {
       return $http ({
         method: 'GET',

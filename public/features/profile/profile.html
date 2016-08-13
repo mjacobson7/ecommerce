@@ -2,10 +2,11 @@
 <div class="profilePage">
 <div class="changeAccountSettings">
   <h3>Account Profile</h3> </br>
-  <button type="button" name="button" ng-click="updateInfo()">Edit</button>
+  <button class="edit" type="button" name="button" ng-click="updateInfo()">Edit</button>
   <p>Name:</br> <input type="text" name="name" value="{{user.name}}" readonly="true"></p> </br></br></br>
   <p>Email:</br> <input type="text" name="name" value="{{user.email}}" readonly></p> </br></br></br>
   <p>Password:</br> <input type="text" name="name" value="&#8226&#8226&#8226&#8226&#8226&#8226&#8226&#8226" readonly></p> </br></br>
+  <button class="signOut" type="button" name="button" ng-click="signOut()">Sign Out</button>
 </div>
 
 <modal-directive></modal-directive>

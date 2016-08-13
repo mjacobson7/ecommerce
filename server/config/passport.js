@@ -11,7 +11,6 @@ module.exports = function(app) {
   app.use(passport.session()); // persistent login sessions
 
   passport.serializeUser(function(user, done) {
-    console.log("We authed!");
         done(null, user.id);
     });
 
@@ -118,5 +117,28 @@ passport.use('local-login', new LocalStrategy({
   app.get('/loginfailure', function(req, res) {
     res.send('Failed to authenticate');
   });
+
+  app.get('/auth/signout', function(req, res) {
+    console.log('logging out');
+    req.logout();
+    res.redirect('/');
+  });
+
+  app.get('/auth/loggedIn', function(req, res) {
+      if(!req.user) {
+        res.send('fail');
+      } else {
+        res.status(200).json(req.user.id);
+      };
+  });
+
+  app.get('/auth/cart', function(req, res) {
+    if(!req.user) {
+      res.send('fail');
+    } else {
+      res.status(200).json(req.user.id);
+    }
+  })
+
 
 }; //end

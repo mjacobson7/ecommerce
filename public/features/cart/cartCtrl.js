@@ -5,6 +5,7 @@ angular.module('myApp')
       var id = $rootScope.user._id
       mainService.getCartItems(id).then(function(response) {
         $scope.products = response.data.cart;
+        console.log(response.data.cart);
           $state.go('cart');
           var subTotal = 0;
           for(var i = 0; i < response.data.cart.length; i++) {

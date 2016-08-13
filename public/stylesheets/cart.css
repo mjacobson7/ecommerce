@@ -1,149 +1,133 @@
-.cartPage {
-  width: 100%;
-  height: 100%;
-  position: relative;
+.pageWrap {
+  min-height: 100vh;
+  display: flex;
   background-color: #F6F6EF;
 }
 
+.cartPage {
+  margin-top: 110px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.itemsInCart {
+  width: 900px;
+  display: flex;
+  flex-direction: row;
+}
+
 .cartContainer {
-  border: 1px solid #DEDEDE;
-  background-color: #fff;
+  border: 1px solid orange;
   border-radius: 5px;
-  width: 950px;
-  position: absolute;
-  left: 235px;
-  top: 175px;
-  margin-bottom: 100px;
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #DEDEDE;
 }
 
 .cartContainer h2 {
-  margin-top: 12px;
-  margin-left: 20px;
+  padding: 10px;
   font-family: 'Montserrat', sans-serif;
-}
-
-.itemsInCart {
-  margin-top: 5px;
-  border-bottom: 1px solid #DEDEDE;
 }
 
 .cartTitleBar {
-  list-style: none;
-  font-family: 'Montserrat', sans-serif;
-  display: inline-block;
-  height: 40px;
-  width: 100%;
-  position: relative;
-  border-bottom: 1px solid #DEDEDE;
-}
-
-.cartTitleBar li {
-  float: left;
-  margin-top: 20px;
-}
-
-.cartTitleBar .cartProduct {
-  position: absolute;
-  left: 20px;
-}
-
-.cartTitleBar .cartItem {
-  position: absolute;
-  left: 200px;
-}
-
-.cartTitleBar .cartQuantity {
-  position: absolute;
-  right: 280px;
-}
-
-.cartTitleBar .cartTotal {
-  position: absolute;
-  right: 20px;
-}
-
-.itemsInCart {
-  width: 100%;
-  height: 200px;
-}
-
-.cartItemImage {
-  height: 200px;
-  width: 190px;
-  position: absolute;
-}
-
-.cartItemName {
-  height: 200px;
-  width: 390px;
-  position: absolute;
-  left: 190px;
-}
-
-.cartItemQuantity {
-  height: 200px;
-  width: 190px;
-  position: absolute;
-  right: 176px;
+  width: 900px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cartItemQuantityView {
-    width: 60%;
-    height: 40px;
-    outline: none;
-    box-shadow: none;
-    background: transparent;
-    background-image: none;
-    position: absolute;
-    left: 0px;
-    top: 75px;
+width: 50px;
+height: 40px;
+outline: none;
+box-shadow: none;
+background: transparent;
+background-image: none;
+}
+
+.cartQuantity {
+  margin-left: 340px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cartTotal {
+  margin-left: 215px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cartProduct {
+  margin-right: 80px;
+  padding: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.itemsInCart {
+  width: 900px;
+  align-items: center;
+  border-top: 1px solid #DEDEDE;
+}
+
+.cartItemImage {
+  width: 140px;
+  height: 140px;
+}
+
+.cartItemName {
+  width: 350px;
+  padding-left: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cartItemQuantity {
+  margin-left: 25px;
 }
 
 .cartItemProductPrice {
-  height: 200px;
-  width: 140px;
-  position: absolute;
-  right: 0px;
+  margin-left: 240px;
 }
 
-.cartItemProductPrice h3 {
-  position: absolute;
-  top: 75px;
-  right: 20px;
-  text-align: right;
+.cartSubtotal {
+  width: 900px;
+  background-color: #fff;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border-left: 1px solid #DEDEDE;
+  border-right: 1px solid #DEDEDE;
+  border-bottom: 1px solid #DEDEDE;
 }
 
 .subTotal {
-  display: inline-block;
-  position: absolute;
-  right: 10px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
 }
 
 .subTotalText {
-  display: inline-block;
-  position: absolute;
-  right: 5px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
 }
 
 .checkOut {
+  font-family: 'Montserrat', sans-serif;
+  margin: 10px;
   width: 190px;
   height: 40px;
-  margin-left: 35px;
   background-color: #E67B14;
   border-radius: 5px;
-  border: 1px solid #DEDEDE;
   outline: none;
-  position: absolute;
-  right: 5px;
-  bottom: -250px;
-  margin-bottom: 100px;
+  border: 1px solid #fff;
 }
 
 .checkOut:active {
+  font-family: 'Montserrat', sans-serif;
   color: #fff;
   background-color: #000;
-}
-
-.checkOut:active .modal {
-  display:inline;
 }

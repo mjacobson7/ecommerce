@@ -1,6 +1,33 @@
 angular.module('myApp')
   .service('mainService', function($http) {
 
+    this.loggedIn = function() {
+      return $http ({
+      method: 'GET',
+      url: '/auth/loggedIn'
+    }).then(function(response) {
+      return response;
+    })
+  }
+
+  this.authCart = function() {
+    return $http ({
+    method: 'GET',
+    url: '/auth/cart'
+  }).then(function(response) {
+    return response;
+  })
+}
+
+    this.signOut = function() {
+      return $http ({
+        method: 'GET',
+        url: '/auth/signout'
+      }).then(function(response) {
+        return response;
+      })
+    }
+
     this.deleteProduct = function(id) {
       console.log(id);
       return $http ({

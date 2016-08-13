@@ -1,5 +1,6 @@
 angular.module('myApp')
-  .controller('adminCtrl', function($rootScope, $scope, mainService, alertify) {
+  .controller('adminCtrl', function($rootScope, $scope, $state, mainService, alertify) {
+
 
     $scope.addProduct = function(title, price, description, image1, image2, image3, image4) {
       if(isNaN(price) || !title || !price || !description || !image1 || !image2 || !image3 || !image4) {

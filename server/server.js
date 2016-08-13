@@ -1,6 +1,6 @@
 var app = require('./config/express.config.js')();
 require('./config/db.config.js')();
-require('./config/passport')(app);
+require('./config/passport.js')(app);
 require('./features/users/userRoutes.js')(app);
 require('./features/products/productRoutes.js')(app);
 

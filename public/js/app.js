@@ -42,7 +42,16 @@ angular.module('myApp', ['ui.router', 'ngAlertify'])
       .state('admin', {
         url: '/admin',
         templateUrl: '../features/admin/admin.html',
-        controller: 'adminCtrl'
+        controller: 'adminCtrl',
+        resolve: {
+            user: function(mainService, $state) {
+              return mainService.loggedIn().then(function(response) {
+                if(response.data === 'fail') {
+                  $state.go('home');
+                }
+              });
+            }
+        }
       })
 
       .state('profile', {
@@ -60,7 +69,17 @@ angular.module('myApp', ['ui.router', 'ngAlertify'])
       .state('cart', {
         url: '/cart',
         templateUrl: '../features/cart/cart.html',
-        controller: 'cartCtrl'
+        controller: 'cartCtrl',
+        resolve: {
+          cart: function(mainService, $state, alertify) {
+            mainService.authCart().then(function(response) {
+              if(response.data === 'fail') {
+                $state.go('login');
+                alertify.delay(5000).logPosition('bottom right').error('You must first log in to view your cart');
+              }
+            })
+          }
+        }
       })
 
       .state('demo', {
@@ -69,6 +88,6 @@ angular.module('myApp', ['ui.router', 'ngAlertify'])
       })
 
 
-      $urlRouterProvider.otherwise('/home');
+      $urlRouterProvider.otherwise('home');
 
   }); //end

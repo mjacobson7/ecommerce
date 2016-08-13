@@ -16,7 +16,15 @@ angular.module('myApp')
 
 
     $scope.addToCart = function(productQuantity, productColor) {
-      if($rootScope.user) {
+      if(!$rootScope.user){
+        alertify.delay(5000).logPosition('bottom right').error('You must first log in');
+      } else if(!productQuantity) {
+        alertify.delay(5000).logPosition('bottom right').error('Please select a quantity');
+      } else if(!productColor) {
+        alertify.delay(5000).logPosition('bottom right').error('Please select a color');
+      } else {
+        console.log(productQuantity);
+        console.log(productColor);
         alertify.delay(5000).logPosition('bottom right').success('Item added successfully!');
         var myCart = {
           userId: $rootScope.user._id,
@@ -24,13 +32,11 @@ angular.module('myApp')
           quantity: productQuantity,
           color: productColor
       };
-      } else {
-        alertify.delay(5000).logPosition('bottom right').error('You must first log in');
-
-    };
       mainService.addToCart(myCart).then(function(response) {
-
+        console.log(response);
       });
+    };
+
     };
 
 

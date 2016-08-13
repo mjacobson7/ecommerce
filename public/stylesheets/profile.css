@@ -28,7 +28,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.changeAccountSettings button {
+.changeAccountSettings .edit {
   width: 80px;
   height: 40px;
   margin-left: 35px;
@@ -40,7 +40,7 @@
   top: 10px;
 }
 
-.changeAccountSettings button:active {
+.changeAccountSettings .edit:active {
   color: #fff;
   background-color: #000;
 }
@@ -51,4 +51,21 @@
   margin-top: 0px;
   margin-left: 10px;
   outline: none;
+}
+
+.signOut {
+  width: 80px;
+  height: 40px;
+  margin-left: 35px;
+  background-color: #fff;
+  border: 1px solid #DEDEDE;
+  outline: none;
+  position: absolute;
+  left: -25px;
+  bottom: 30px;
+}
+
+.signOut:active {
+  color: #fff;
+  background-color: #000;
 }

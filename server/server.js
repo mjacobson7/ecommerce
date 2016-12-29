@@ -1,12 +1,10 @@
-var app = require('./config/express.config.js')();
-require('./config/db.config.js')();
-require('./config/passport.js')(app);
+var app = require('./config/express.js')();
+require('./config/db.js')();
+require('./config/passport')(app);
 require('./features/users/userRoutes.js')(app);
 require('./features/products/productRoutes.js')(app);
 
-var port = 3000;
-
-
+var port = process.env.PORT || 4000;
 
 app.listen(port, function() {
   console.log('The magic happens on port ' + port);

@@ -1,6 +1,19 @@
 angular.module('myApp')
   .service('mainService', function($http) {
 
+    this.getUser = function() {
+      return $http ({
+        method: 'GET',
+        url: '/auth/getuser'
+      }).then(function(response) {
+         return response;
+      })
+      .catch(function(err) {
+        console.log("mainService err ==> ", err);
+      })
+    }
+
+
     this.loggedIn = function() {
       return $http ({
       method: 'GET',
@@ -75,7 +88,6 @@ angular.module('myApp')
         return response;
       })
     };
-
 
     this.getProducts = function() {
       return $http({

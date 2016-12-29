@@ -13,10 +13,19 @@
   flex-direction: column;
 }
 
+.cartTitleBar {
+  width: 900px;
+  height: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .itemsInCart {
   width: 900px;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .cartContainer {
@@ -34,35 +43,25 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.cartTitleBar {
-  width: 900px;
-  height: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .cartItemQuantityView {
-width: 50px;
-height: 40px;
-outline: none;
-box-shadow: none;
-background: transparent;
-background-image: none;
+  width: 50px;
+  height: 40px;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
 }
 
 .cartQuantity {
-  margin-left: 340px;
   font-family: 'Montserrat', sans-serif;
 }
 
 .cartTotal {
-  margin-left: 215px;
   font-family: 'Montserrat', sans-serif;
 }
 
 .cartProduct {
-  margin-right: 80px;
   padding: 5px;
   font-family: 'Montserrat', sans-serif;
 }
@@ -76,12 +75,14 @@ background-image: none;
 .cartItemImage {
   width: 140px;
   height: 140px;
+  align-self: flex-start;
 }
 
 .cartItemName {
   width: 350px;
   padding-left: 15px;
   font-family: 'Montserrat', sans-serif;
+  align-self: flex-start;
 }
 
 .cartItemQuantity {
@@ -89,7 +90,6 @@ background-image: none;
 }
 
 .cartItemProductPrice {
-  margin-left: 240px;
 }
 
 .cartSubtotal {

@@ -1,8 +1,9 @@
 .profilePage {
-  height: 650px;
-  width: 100%;
-  position: relative;
+  height: 100%;
   background-color: #F6F6EF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .changeAccountSettings {
@@ -10,15 +11,16 @@
   background-color: #fff;
   border-radius: 5px;
   height: 400px;
-  width: 400px;
-  position: absolute;
-  top: 160px;
-  left: 100px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .changeAccountSettings h3 {
   margin-top: 15px;
-  margin-left: 35px;
+  align-self: center;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -31,13 +33,11 @@
 .changeAccountSettings .edit {
   width: 80px;
   height: 40px;
-  margin-left: 35px;
+  margin-left: 10px;
   background-color: #fff;
   border: 1px solid #DEDEDE;
+  align-self: flex-start;
   outline: none;
-  position: absolute;
-  right: 20px;
-  top: 10px;
 }
 
 .changeAccountSettings .edit:active {
@@ -49,6 +49,7 @@
   width: 60%;
   height: 36px;
   margin-top: 0px;
+  margin-bottom: 10px;
   margin-left: 10px;
   outline: none;
 }
@@ -56,13 +57,11 @@
 .signOut {
   width: 80px;
   height: 40px;
-  margin-left: 35px;
+  margin-left: 10px;
   background-color: #fff;
   border: 1px solid #DEDEDE;
+  align-self: flex-start;
   outline: none;
-  position: absolute;
-  left: -25px;
-  bottom: 30px;
 }
 
 .signOut:active {

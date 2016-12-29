@@ -1,13 +1,28 @@
-body {
-  position: relative;
-}
+/*
 
 .footerContainer {
   height: 40px;
   width: 100%;
   background-color: rgba(20, 20, 20, 0.8);
   z-index: 1;
-  position: absolute;
-  bottom: 0px;
   position: fixed;
+}*/
+
+#outerContainer {
+  background-color: rgba(20, 20, 20, 0.8);
+  height: 30px;
+  position: fixed;
+  bottom: 0;
+}
+
+#footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+.copyright {
+  font-family: 'Lato', sans-serif;
+  margin: 0px;
 }

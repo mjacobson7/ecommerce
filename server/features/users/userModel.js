@@ -7,7 +7,7 @@ var UserSchema = new Schema ({
   email:    {type: String, required: true, unique: true},
   password: {type: String, required: true},
   cart:     [{type: mongoose.Schema.Types.ObjectId, ref: 'Product'}],
-  role:     {type: String, required: false}
+  role:     {type: String, required: true}
 
 });  //That was easy
 

@@ -1,21 +1,19 @@
 angular.module('myApp')
   .controller('productCtrl', function($rootScope, $scope, $stateParams, $state, mainService, alertify) {
 
+    var getUser = function() {
+      mainService.getUser().then(function(response) {
+        console.log("THIS IS THE RESPONSE ====> ", response);
+        if(response) {
+          $rootScope.user = response.data;
+        }
+      })
+    }
 
-    $scope.getProduct = function() {
-      mainService.viewProduct($stateParams.id).then(function(response) {
-        $scope.product = response;
-      });
-    };
-
-    $scope.getProduct();
-
-    $scope.backToProducts = function() {
-      $state.go('shop');
-    };
-
+    getUser();
 
     $scope.addToCart = function(productQuantity, productColor) {
+      console.log($rootScope.user);
       if(!$rootScope.user){
         alertify.delay(5000).logPosition('bottom right').error('You must first log in');
       } else if(!productQuantity) {
@@ -31,13 +29,27 @@ angular.module('myApp')
           productId: $scope.product._id,
           quantity: productQuantity,
           color: productColor
+        };
+        mainService.addToCart(myCart).then(function(response) {
+          console.log(response);
+        });
       };
-      mainService.addToCart(myCart).then(function(response) {
-        console.log(response);
+
+    };
+
+    $scope.getProduct = function() {
+      mainService.viewProduct($stateParams.id).then(function(response) {
+        $scope.product = response;
       });
     };
 
+    $scope.getProduct();
+
+    $scope.backToProducts = function() {
+      $state.go('shop');
     };
+
+
 
 
 

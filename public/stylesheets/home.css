@@ -1,16 +1,18 @@
-@media (min-width:960px) {
-.homePage {
+html, body {
   height: 100%;
-  width: 100%;
+}
+
+.homePage {
   display: flex;
+  height: 100%;
   justify-content: center;
   align-items: center;
 }
 
 .homeTitle {
-  color: white;
+  color: #fff;
   font-family: 'Montserrat', sans-serif;
-  font-size: 80px;
+  font-size: 70px;
   text-align: center;
 }
 
@@ -53,87 +55,4 @@
        -moz-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
 	    transform: translate(-50%, -50%);
-}
-
-@media (max-width: 767px) {
-    .fullscreen-bg {
-        background: url('../../assets/redwoodstill.jpg') center center / cover no-repeat;
-    }
-
-    .fullscreen-bg__video {
-        display: none;
-    }
-}
-
-}
-
-
-@media (max-width:960px) {
-.homePage {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.homeTitle {
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 50px;
-  padding: 0px 20px;
-  text-align: center;
-}
-
-#homeLink {
-  font-family: 'Montserrat', sans-serif;
-  padding: 15px 30px;
-  color: #000;
-  background-color: #fff;
-  border-radius: 2px;
-  outline: none;
-  border: none;
-  margin-top: 20px;
-  font-size: 12px;
-}
-
-#homeLink:hover {
-  color: #000;
-  background-color: #dedede;
-}
-
-.fullscreen-bg {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: -100;
-}
-
-.fullscreen-bg__video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    -webkit-transform: translate(-50%, -50%);
-       -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-	    transform: translate(-50%, -50%);
-}
-
-@media (max-width: 767px) {
-    .fullscreen-bg {
-        background: url('../../assets/redwoodstill.jpg') center center / cover no-repeat;
-    }
-
-    .fullscreen-bg__video {
-        display: none;
-    }
-}
-
 }

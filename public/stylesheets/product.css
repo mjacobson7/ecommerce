@@ -1,7 +1,47 @@
 .productViewPage {
-  height: 650px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productViewContainer {
+  width: 80%;
+  height: auto;
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.imageAndCart {
+  display: flex;
+  margin-top: 15px;
+
+}
+
+.imageViewContainer {
+  height: 400px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 1px solid #dedede;
+}
+
+.topRowDiv {
   width: 100%;
+  align-self: center;
+}
+
+.largeImage {
   position: relative;
+  width: 100%;
+  height: 275px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .productViewImage {
@@ -33,118 +73,94 @@
 #image1Large {
   height: 250px;
   width: auto;
-  position: absolute;
-  top: 160px;
-  left: 270px;
 }
 
 #image2Large {
   display: none;
   height: 250px;
   width: auto;
-  position: absolute;
-  top: 160px;
-  left: 270px;
+
 }
 
 #image3Large {
   display: none;
   height: 250px;
   width: auto;
-  position: absolute;
-  top: 160px;
-  left: 270px;
+
 }
 
 #image4Large {
   display: none;
   height: 250px;
   width: auto;
-  position: absolute;
-  top: 160px;
-  left: 270px;
+
 }
 
 #image1 {
-  position: absolute;
-  top: 480px;
-  left: 220px;
+
 }
 
 #image2 {
-  position: absolute;
-  top: 480px;
-  left: 320px;
+
 }
 
 #image3 {
-  position: absolute;
-  top: 480px;
-  left: 420px;
+
 }
 
 #image4 {
-  position: absolute;
-  top: 480px;
-  left: 520px;
+
 }
 
-.productViewImageLarge img {
-  position: absolute;
-  top: 130px;
-  left: 240px;
-  height: 350px;
+.productViewImageLarge {
   width: auto;
+  height: 250px;
+  position: absolute;
+  z-index: -1;
 }
 
 .productViewTitle {
   font-family: 'Montserrat', sans-serif;
-  position: absolute;
-  top: 100px;
-  left: 225px;
   word-wrap: break-word;
-  max-width: 850px;
+  width: 100%;
   text-align: center;
 }
 
 .productViewPrice {
   font-family: 'Montserrat', sans-serif;
-  position: absolute;
-  top: 180px;
-  right: 40px;
   font-size: 30px;
 }
 
-.productViewDescription {
+.productViewDescriptionContainer {
 
   overflow-x: scroll;
   height: auto;
-  width: 850px;
-  position: absolute;
-  top: 580px;
-  right: 368px;
+  width: 900px;
   background-color: #fff;
   border: 1px solid #000;
-  margin-bottom: 100px;
-  padding-top: 40px;
+  margin-bottom: 50px;
+  margin-top: 10px;
   text-align: left;
-  word-wrap: break-word;
+  /*word-wrap: break-word;*/
+  align-self:flex-end;
+  display: flex;
+  flex-direction: column;
 }
 
 .productViewCart {
   background-color: #F1F1F1;
-  height: 300px;
-  width: 480px;
+  height: auto;
+  width: 420px;
   font-family: 'Montserrat', sans-serif;
-  position: absolute;
-  top: 178px;
-  right: 330px;
+  display: flex;
+  /*flex-direction: column;*/
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .productViewCart h3 {
-  position: absolute;
-  right: 5px;
-  top: 350px;
+
 }
 
 .productViewCart ul li {
@@ -152,15 +168,11 @@
 }
 
 .productViewQuantity {
-  position: absolute;
-  top: 37px;
-  left: 30px;
+
 }
 
 .productViewColor {
-  position: absolute;
-  top: 110px;
-  left: 55px;
+
 }
 
 .productViewInput {
@@ -170,9 +182,6 @@
   box-shadow: none;
   background: transparent;
   background-image: none;
-  position: absolute;
-  right: 40px;
-  top: 25px;
 }
 
 .productViewColorInput {
@@ -182,9 +191,6 @@
   box-shadow: none;
   background: transparent;
   background-image: none;
-  position: absolute;
-  right: 40px;
-  top: 100px;
 }
 
 .productViewCart button {
@@ -195,9 +201,6 @@
   border-radius: 5px;
   border: 1px solid #DEDEDE;
   outline: none;
-  position: absolute;
-  right: 10px;
-  bottom: 20px;
 }
 
 .productViewCart button:active {
@@ -207,42 +210,30 @@
 
 .productViewTotal {
   font-size: 30px;
-  position: absolute;
-  top: 180px;
-  left: 240px;
 }
 
 .productViewDescriptionTitle {
   font-family: 'Montserrat', sans-serif;
-  position: absolute;
-  top: 0px;
   background-color: #F1F1F1;
   width: 100%;
-  padding: 10px;
-}
-
-.productViewFeaturesTitle {
-  font-family: 'Montserrat', sans-serif;
-  position: absolute;
-  top: 0px;
-  background-color: #F1F1F1;
-  width: 100%;
-  padding: 10px;
+  padding: 5px;
 }
 
 #backToProducts {
   width: 80px;
   height: 40px;
-  margin-left: 35px;
+  align-self: flex-start;
   background-color: #fff;
   border: 1px solid #DEDEDE;
   outline: none;
-  position: absolute;
-  left: 5px;
-  top: 100px;
+  align-self: center;
 }
 
 #backToProducts:hover {
   color: #000;
   background-color: #dedede;
+}
+
+#quantityForm {
+  width: 290px;
 }

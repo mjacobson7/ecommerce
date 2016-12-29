@@ -1,5 +1,6 @@
 angular.module('myApp')
-  .controller('loginCtrl', function($rootScope, $scope, mainService, $state, alertify) {
+  .controller('loginCtrl', function($rootScope, $scope, mainService, $state, alertify, $location) {
+
 
     $scope.signUp = function(email, name, password1, password2) {
 
@@ -17,7 +18,8 @@ angular.module('myApp')
         var userSignUpInfo = {
           name: name,
           email: email,
-          password: password1
+          password: password1,
+          role: 'user'
         };
         mainService.signUp(userSignUpInfo).then(function(response) {
           $scope.email = '';

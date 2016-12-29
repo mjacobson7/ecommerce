@@ -1,7 +1,5 @@
-@media screen and (min-width:800px) {
-
 .aboutBody {
-  height: 700px;
+  height: 690px;
   width: 100%;
   background-image: url("../assets/aboutus.jpeg");
   background-size: cover;
@@ -21,13 +19,13 @@
 
 .aboutUsText {
     font-family: 'Montserrat', sans-serif;
-    width: 500px;
+    width: 800px;
     padding-left: 250px;
 }
 
-}
 
-@media screen and (max-width:800px) {
+
+/*@media screen and (max-width:800px) {
 
 .aboutBody {
   height: 700px;
@@ -85,4 +83,4 @@
     font-size: 15px;
 }
 
-}
+}*/

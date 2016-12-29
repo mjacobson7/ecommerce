@@ -2,17 +2,20 @@
   height: 700px;
   width: 100%;
   background-color: #F6F6EF;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid red;
 }
 
 .addProduct {
   height: 450px;
-  width: 750px;
+  width: 55%;
   border: 1px solid #DEDEDE;
-  position: absolute;
-  left: 100px;
-  top: 150px;
   background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .addProduct button {
@@ -30,18 +33,18 @@
 }
 
 .addProduct input {
-  width: 300px;
+  width: 30%;
   height: 40px;
   margin-top: 5px;
-  margin-left: 35px;
+  margin-left: 70px;
   padding: 4px 9px;
   outline: none;
 }
 
 .addProduct textarea {
-  width: 663px;
+  width: 90%;
   height: 80px;
-  max-height: 100px;
+  max-height: 80px;
   max-width: 663px;
   margin-top: 5px;
   margin-left: 35px;
@@ -52,22 +55,27 @@
 .addProduct h3 {
   margin-top: 15px;
   margin-left: 35px;
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
   font-family: 'Montserrat', sans-serif;
+  align-self: flex-start;
 }
 
 .deleteProduct {
   height: 450px;
-  width: 400px;
+  width: 30%;
   border: 1px solid #DEDEDE;
-  position: absolute;
-  right: 100px;
-  top: 150px;
   background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .deleteProduct h3 {
   margin-top: 15px;
-  margin-left: 35px;
+  margin-left: 25px;
+  margin-right: 10px;
   font-family: 'Montserrat', sans-serif;
 }
 

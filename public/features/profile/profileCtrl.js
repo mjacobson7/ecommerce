@@ -1,7 +1,7 @@
 angular.module('myApp')
   .controller('profileCtrl', function($rootScope, $scope, $state, mainService) {
 
-    $scope.user = $rootScope.user;
+
 
     $scope.updateInfo = function() {
       $state.go('updateprofile');

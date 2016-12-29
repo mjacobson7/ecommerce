@@ -24,6 +24,7 @@ module.exports = {
   },
 
   createUser: function(req, res) {
+    console.log("REQ.BODY =====> " + req.body);
     var user = new User(req.body);
     user.save(function(err, result) {
       if(err) {
@@ -35,13 +36,19 @@ module.exports = {
   },
 
   getUser: function(req, res) {
-    User.findById(req.params.id, function(err, result) {
-      if(err) {
-        res.status(500).send(err);
-      } else {
-        res.status(200).json(result);
-      }
-    })
+    console.log(req.user);
+    if(req.user) {
+      return res.json(req.user);
+    } else {
+      return res.status(500).send('No User');
+    }
+    // User.findById(req.params.id, function(err, result) {
+    //   if(err) {
+    //     res.status(500).send(err);
+    //   } else {
+    //     res.status(200).json(result);
+    //   }
+    // })
 
   },
 

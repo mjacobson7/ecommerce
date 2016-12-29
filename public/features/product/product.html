@@ -1,65 +1,68 @@
 <header-directive></header-directive>
 
 <div class="productViewPage">
-
-    <button id="backToProducts" type="button" name="button" ng-click="backToProducts()">BACK</button>
-    <h2 class="productViewTitle">{{product.title}}</h2>
-
   <div class="productViewContainer">
-
-    <div class="image1SmallLarge">
-      <img class="productViewImageLarge" ng-src="{{product.image1}}" id="image1Large" alt=""/>
-      <img class="productViewImage" id="image1" ng-src="{{product.image1}}" alt=""/>
+    <div class="topRowDiv">
+      <button id="backToProducts" type="button" name="button" ng-click="backToProducts()">BACK</button>
+      <h2 class="productViewTitle">{{product.title}}</h2>
     </div>
 
-    <div class="image2SmallLarge">
-      <img class="productViewImageLarge" ng-src="{{product.image2}}" id="image2Large" alt=""/>
-      <img class="productViewImage" id="image2" ng-src="{{product.image2}}" alt=""/>
+    <div class="imageAndCart">
+
+      <div jquery-directive class="imageViewContainer">
+        <div class="largeImage">
+          <img class="productViewImageLarge" id="image4" src="{{product.image4}}" alt="">
+          <img class="productViewImageLarge" id="image3" src="{{product.image3}}" alt="">
+          <img class="productViewImageLarge" id="image2" src="{{product.image2}}" alt="">
+          <img class="productViewImageLarge" id="image1" src="{{product.image1}}" alt="">
+        </div>
+
+        <div class="smallImage">
+          <img class="productViewImage" id="smallImage1" src="{{product.image1}}" alt="">
+          <img class="productViewImage" id="smallImage2" src="{{product.image2}}" alt="">
+          <img class="productViewImage" id="smallImage3" src="{{product.image3}}" alt="">
+          <img class="productViewImage" id="smallImage4" src="{{product.image4}}" alt="">
+        </div>
+      </div>
+
+      <div class="productViewCart">
+
+        <p class="productViewQuantity">Quantity</p>
+        <select id="quantityForm" class="browser-default" ng-model="productQuantity">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="3">4</option>
+          <option value="3">5</option>
+        </select>
+
+        <p class="productViewQuantity">Color/Style</p>
+        <select id="quantityForm" class="browser-default" ng-model="productColor">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">Blue/Grey</option>
+          <option value="2">Burgandy</option>
+          <option value="3">Orange/Grey</option>
+          <option value="3">Black/Yellow</option>
+        </select>
+
+        <ul>
+          <li class="productViewTotal">Total:</li>
+          <li class="productViewPrice">{{product.price | currency}}</li>
+        </ul>
+
+
+        <button type="button" name="button" ng-click="addToCart(productQuantity, productColor)">ADD TO CART</button>
+      </div>
     </div>
 
-    <div class="image3SmallLarge">
-      <img class="productViewImageLarge" ng-src="{{product.image3}}" id="image3Large" alt=""/>
-      <img class="productViewImage" id="image3" ng-src="{{product.image3}}" alt=""/>
+
+    <div class="productViewDescriptionContainer">
+      <div class="productViewDescriptionTitle">PRODUCT INFORMATION</div>
+      <!-- <div class="productViewFeaturesTitle">FEATURES</div> -->
+      <div class="productViewDescription">{{product.description}}</div>
     </div>
 
-    <div class="image4SmallLarge">
-      <img class="productViewImageLarge" ng-src="{{product.image4}}" id="image4Large" alt=""/>
-      <img class="productViewImage" id="image4" ng-src="{{product.image4}}" alt=""/>
-    </div>
-
-
-  <div class="productViewCart">
-    <ul>
-      <li class="productViewQuantity">Quantity</li>
-      <li class="productViewColor">Color</li>
-      <li class="productViewTotal">Total:</li>
-      <li class="productViewPrice">{{product.price | currency}}</li>
-    </ul>
-    <select class="productViewInput" name="" ng-model="productQuantity">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-
-    <select class="productViewColorInput" name="" ng-model="productColor">
-      <option value="Blue/Grey">Blue/Grey</option>
-      <option value="Burgandy">Burgandy</option>
-      <option value="Orange/Grey">Orange/Grey</option>
-      <option value="Black/Yellow">Black/Yellow</option>
-    </select>
-
-    <button type="button" name="button" ng-click="addToCart(productQuantity, productColor)">ADD TO CART</button>
   </div>
-
-  </div>
-
-  <div class="productViewDescription">{{product.description}}
-    <div class="productViewDescriptionTitle">PRODUCT INFORMATION</div>
-    <div class="productViewFeaturesTitle">FEATURES</div>
-  </div>
-
-
 </div>
 <footer-directive></footer-directive>

@@ -30,7 +30,7 @@ angular.module('myApp', ['ui.router', 'ngAlertify'])
       .state('login', {
         url: '/login',
         templateUrl: '../features/login/login.html',
-        controller: 'loginCtrl'
+        controller: 'loginCtrl',
       })
 
       .state('product', {

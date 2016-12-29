@@ -1,9 +1,20 @@
 angular.module('myApp')
   .controller('cartCtrl', function($rootScope, $scope, mainService, $state) {
 
-    $scope.getCartItems = function() {
-      var id = $rootScope.user._id
-      mainService.getCartItems(id).then(function(response) {
+    var getUser = function() {
+      mainService.getUser().then(function(response) {
+        console.log("THIS IS THE RESPONSE ====> ", response);
+        if(response) {
+          var user = response.data;
+          $scope.getCartItems(user);
+        }
+      })
+    }
+
+    getUser();
+
+    $scope.getCartItems = function(user) {
+      mainService.getCartItems(user._id).then(function(response) {
         $scope.products = response.data.cart;
         console.log(response.data.cart);
           $state.go('cart');
@@ -15,8 +26,6 @@ angular.module('myApp')
           $scope.subtotal = subTotal;
       });
     };
-
-    $scope.getCartItems();
 
     $scope.finalizeOrder = function() {
       $state.go('demo');

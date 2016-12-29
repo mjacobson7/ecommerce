@@ -1,12 +1,19 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var session = require('express-session');
-var mongoose = require('mongoose');
 var User = require('../features/users/userModel.js');
+var session = require('express-session');
+var mongoose   = require('mongoose');
+var keys = require('./keys')
 
 module.exports = function(app) {
 
-  app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+  app.use(session({
+     secret: keys.secret,
+     resave: false,
+     saveUninitialized: true,
+     cookie: {maxAge: 60000 * 20}, // 20 minutes
+   })); // session secret
+
   app.use(passport.initialize());
   app.use(passport.session()); // persistent login sessions
 
@@ -59,7 +66,7 @@ module.exports = function(app) {
                newUser.save(function(err) {
                    if (err)
                        throw err;
-                   return done(null, newUser);
+                   return done(null);
                });
            }
 
@@ -100,6 +107,13 @@ passport.use('local-login', new LocalStrategy({
         });
     })); //end login
 
+  app.use(function(req, res, next) {
+    // console.log(req);
+    next();
+  })
+
+
+
   app.post('/auth/signup', passport.authenticate('local-signup', {
     successRedirect : '/#/success', // redirect to the secure profile section
     failureRedirect : '/#/failure', // redirect back to the signup page if there is an error
@@ -123,22 +137,5 @@ passport.use('local-login', new LocalStrategy({
     req.logout();
     res.redirect('/');
   });
-
-  app.get('/auth/loggedIn', function(req, res) {
-      if(!req.user) {
-        res.send('fail');
-      } else {
-        res.status(200).json(req.user.id);
-      };
-  });
-
-  app.get('/auth/cart', function(req, res) {
-    if(!req.user) {
-      res.send('fail');
-    } else {
-      res.status(200).json(req.user.id);
-    }
-  })
-
 
 }; //end

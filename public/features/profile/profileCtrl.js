@@ -1,6 +1,17 @@
 angular.module('myApp')
-  .controller('profileCtrl', function($rootScope, $scope, $state, mainService) {
+  .controller('profileCtrl', function($scope, $state, mainService) {
 
+    function loggedIn() {
+      mainService.loggedIn().then(function(response) {
+        if(response.data._id) {
+          $scope.user = response.data;
+        } else {
+          $state.go('login');
+        }
+      })
+    }
+
+    loggedIn();
 
 
     $scope.updateInfo = function() {

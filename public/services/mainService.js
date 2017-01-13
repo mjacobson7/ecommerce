@@ -140,6 +140,20 @@ angular.module('myApp')
       }).then(function(response) {
         return response;
       })
-    }
+    };
+
+    var cart = [];
+    var subTotal = 0;
+    var tax = 0;
+    var total = 0;
+
+    this.noSessionCart = function(myCart) {
+      if(myCart) {
+        cart.push(myCart);
+        return cart;
+      } else {
+        return cart;
+      }
+    };
 
   }); //end

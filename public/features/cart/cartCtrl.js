@@ -3,12 +3,11 @@ angular.module('myApp')
 
     var getUser = function() {
       mainService.getUser().then(function(response) {
-        console.log("THIS IS THE RESPONSE ====> ", response);
         if(response) {
           var user = response.data;
           $scope.getCartItems(user);
         } else {
-
+          $scope.getCartItems();
         }
       })
     }
@@ -16,9 +15,10 @@ angular.module('myApp')
     getUser();
 
     $scope.getCartItems = function(user) {
-      mainService.getCartItems(user._id).then(function(response) {
-        $scope.products = response.data.cart;
-        console.log(response.data.cart);
+      if($scope.user) {
+        mainService.getCartItems(user._id).then(function(response) {
+          $scope.products = response.data.cart;
+          console.log(response.data.cart);
 
           var subTotal = 0;
           for(var i = 0; i < response.data.cart.length; i++) {
@@ -26,7 +26,13 @@ angular.module('myApp')
           }
           console.log(subTotal);
           $scope.subtotal = subTotal;
-      });
+        });
+      } else {
+        var noSessionCart = mainService.noSessionCart();
+        console.log(noSessionCart);
+        $scope.products = noSessionCart;
+
+      }
     };
 
     $scope.finalizeOrder = function() {

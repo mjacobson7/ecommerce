@@ -31,6 +31,15 @@ angular.module('myApp', ['ui.router', 'ngAlertify'])
         url: '/login',
         templateUrl: '../features/login/login.html',
         controller: 'loginCtrl',
+        resolve: {
+            user: function(mainService, $state) {
+              return mainService.loggedIn().then(function(response) {
+                if(response.data !== 'fail') {
+                  $state.go('profile');
+                }
+              });
+            }
+        }
       })
 
       .state('product', {
@@ -57,7 +66,16 @@ angular.module('myApp', ['ui.router', 'ngAlertify'])
       .state('profile', {
         url: '/profile',
         templateUrl: '../features/profile/profile.html',
-        controller: 'profileCtrl'
+        controller: 'profileCtrl',
+        resolve: {
+            user: function(mainService, $state) {
+              return mainService.loggedIn().then(function(response) {
+                if(response.data === 'fail') {
+                  $state.go('login');
+                }
+              });
+            }
+        }
       })
 
       .state('updateprofile', {

@@ -26,8 +26,16 @@
 
       <div class="productViewCart">
         <h2 class="productViewTitle">{{product.title}}</h2>
-        <p class="productViewQuantity">Quantity:<input id="quantityForm" min="1" type="number" name="" value="1">
-</p>
+        <p class="productViewQuantity">
+          <select class="browser-default" id="quantityForm" ng-model="product.quantity">
+            <option value="" disabled selected>Quantity</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </p>
 
         <ul>
           <li class="productViewTotal">Total: <span>{{product.price | currency}}<span></li>
@@ -37,9 +45,11 @@
 
 
 
-        <div class="addToCart" ng-click="addToCart(productQuantity, productColor)">ADD TO CART</button>
+        <div class="addToCart" ng-click="addToCart()">ADD TO CART</button>
       </div>
     </div>
+
+
 
 
 

@@ -1,41 +1,34 @@
 angular.module('myApp')
-  .controller('productCtrl', function($rootScope, $scope, $stateParams, $state, mainService, alertify) {
+  .controller('productCtrl', function($scope, $stateParams, $state, mainService, alertify) {
 
     var getUser = function() {
       mainService.getUser().then(function(response) {
-        console.log("THIS IS THE RESPONSE ====> ", response);
         if(response) {
-          $rootScope.user = response.data;
+          $scope.user = response.data;
         }
       })
     }
 
     getUser();
 
-    $scope.addToCart = function(productQuantity, productColor) {
-      console.log($rootScope.user);
-      if(!$rootScope.user){
-        alertify.delay(5000).logPosition('bottom right').error('You must first log in');
-      } else if(!productQuantity) {
-        alertify.delay(5000).logPosition('bottom right').error('Please select a quantity');
-      } else if(!productColor) {
-        alertify.delay(5000).logPosition('bottom right').error('Please select a color');
-      } else {
-        console.log(productQuantity);
-        console.log(productColor);
-        alertify.delay(5000).logPosition('bottom right').success('Item added successfully!');
+    $scope.addToCart = function() {
+      alertify.delay(5000).logPosition('bottom right').success('Item added successfully!');
+      if($scope.user) {
         var myCart = {
-          userId: $rootScope.user._id,
+          userId: $scope.user._id,
           productId: $scope.product._id,
-          quantity: productQuantity,
-          color: productColor
+          quantity: $scope.quantity,
         };
         mainService.addToCart(myCart).then(function(response) {
           console.log(response);
         });
+      } else {
+
+        var cartStorage = mainService.noSessionCart($scope.product);
+        console.log(cartStorage);
+      }
       };
 
-    };
 
     $scope.getProduct = function() {
       mainService.viewProduct($stateParams.id).then(function(response) {

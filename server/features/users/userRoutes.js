@@ -10,13 +10,13 @@ module.exports = function(app) {
   app.delete('/api/deletecart/:id', userCtrl.deleteCart);
 
   app.get('/auth/getuser', userCtrl.getUser);
-  
+
   //passport
   app.get('/auth/loggedIn', function(req, res) {
       if(!req.user) {
         res.send('fail');
       } else {
-        res.status(200).json(req.user.id);
+        res.status(200).json(req.user);
       };
   });
 

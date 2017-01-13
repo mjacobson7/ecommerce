@@ -6,24 +6,16 @@ angular.module('myApp')
       scope: {},
       controller: function($scope, mainService, $state) {
 
-        getUser = function() {
+        $scope.getUser = function() {
           mainService.getUser().then(function(response) {
             console.log("THIS IS THE RESPONSE ====> ", response);
             if(response) {
-              $scope.validatedUser = true;
-              $scope.user = response.data.name.toUpperCase();
-              $scope.dataHasLoaded = true;
+              $state.go('profile');
             } else {
-              $scope.validatedUser = false;
-              $scope.user = 'LOGIN | REGISTER';
-              $scope.cart = 'cart';
-              $scope.dataHasLoaded = true;
+              $state.go('login');
             }
           })
         }
-
-        getUser();
-
 
       }
     };

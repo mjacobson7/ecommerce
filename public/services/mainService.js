@@ -56,9 +56,14 @@ angular.module('myApp')
         method: 'GET',
         url: '/api/getcartitems/' + id
       }).then(function(response) {
-        return response;
-      })
-    };
+        var cartArray = response.data.cart;
+        for(var i = 0; i < cartArray.length; i++) {
+          var newDesc = cartArray[i].description.slice(0, 100);
+          response.data.cart[i].description = newDesc + "...";
+      }
+      return response;
+    })
+  }
 
     this.emptyCart = function(id) {
       return $http ({

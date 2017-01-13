@@ -7,6 +7,8 @@ angular.module('myApp')
         if(response) {
           var user = response.data;
           $scope.getCartItems(user);
+        } else {
+
         }
       })
     }
@@ -17,7 +19,7 @@ angular.module('myApp')
       mainService.getCartItems(user._id).then(function(response) {
         $scope.products = response.data.cart;
         console.log(response.data.cart);
-          $state.go('cart');
+
           var subTotal = 0;
           for(var i = 0; i < response.data.cart.length; i++) {
             subTotal = subTotal + response.data.cart[i].price;

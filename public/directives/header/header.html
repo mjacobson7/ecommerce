@@ -1,13 +1,13 @@
-<ul class="flexContainer">
+<ul ng-cloak class="flexContainer">
   <li class="headerLogo"><img class='headerImage' src="../assets/logo-white.png" alt=""/></li>
   <li class="flexItem" id="hideDisplay"><a ui-sref="home">HOME</a></li>
   <li class="flexItem" id="hideDisplay"><a ui-sref="shop">SHOP</a></li>
   <li class="flexItem" id="hideDisplay"><a ui-sref="about">ABOUT</a></li>
   <li class="flexItem" id="hideDisplay"><a ui-sref="contact">CONTACT</a></li>
-  <li class="flexItem" ng-show="validatedUser" id="hideDisplay"><a ui-sref="cart"><i class="material-icons md-light">shopping_cart</i></a></li>
-  <li class="flexItem" ng-hide="validatedUser" id="hideDisplay"><a ui-sref="login"><i class="material-icons md-light">shopping_cart</i></a></li>
-  <li ng-hide="validatedUser" class="flexItem" id="hideDisplay"><a ui-sref="login" class="headerUser">{{user}}</a></li>
-  <li ng-show="validatedUser" class="flexItem" id="hideDisplay"><a ui-sref="profile" class="headerUser">{{user}}</a></li>
+  <li class="flexItem" id="hideDisplay"><a ui-sref="cart"><i class="material-icons md-light">shopping_cart</i></a></li>
+  <!-- <li class="flexItem" ng-hide="validatedUser" id="hideDisplay"><a ui-sref="login"><i class="material-icons md-light">shopping_cart</i></a></li> -->
+  <!-- <li ng-hide="validatedUser" class="flexItem" id="hideDisplay"><a ui-sref="login" class="headerUser">{{user}}</a></li> -->
+  <li class="flexItem" id="hideDisplay"><a class="headerUser" ng-click="getUser()">ACCOUNT</a></li>
   <li class="flexItem"><a><i class="medium material-icons md-light" id="hamburger">menu</i></a></li>
 
 </ul>

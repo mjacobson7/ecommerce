@@ -1,39 +1,31 @@
 <div class="pageWrap">
 
-<header-directive></header-directive>
-<div class="cartPage">
-  <div class="cartContainer">
-    <h2>My Cart</h2></hr>
-    <div class="cartTitleBar">
-      <span class="cartProduct">ITEM</span>
-      <span class="cartQuantity">QUANTITY</span>
-      <span class="cartTotal">TOTAL</span>
-    </div>
-
-    <div class="itemsInCart" ng-repeat="item in products">
-      <img class="cartItemImage" ng-src="{{item.image1}}" alt=""/>
-      <div class="cartItemName">{{item.title}}</div>
-      <div class="cartItemQuantity">
-        <select class="cartItemQuantityView" name="">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+  <header-directive></header-directive>
+  <div class="cartPage">
+    <div class="cartTitle">Your Cart</div>
+    <div class="cartPageContainer">
+      <div class="cartContainer">
+        <div class="cartProduct" ng-repeat="item in products">
+          <img class="cartItemImage" ng-src="{{item.image1}}" alt="">
+          <div class="titleAndDescription">
+            <div class="cartItemName">{{item.title}}</div>
+            <div class="cartItemDescription">{{item.description}}</div>
+          </div>
+          <input id="cartItemQuantity" type="number" min="1" name="" value="{{item.quantity}}">
+          <div class="multipliedBy">x</div>
+          <div class="cartItemPrice">{{item.price | currency}}</div>
+          <div class="deleteCartItem"><i class="material-icons">delete</i></div>
+        </div>
+        <hr>
       </div>
-      <div class="cartItemProductPrice">
-        <h3>{{item.price}}</h3>
+      <div class="cartSummary">
+        <div class="cartSummaryTitle">Summary</div>
+        <div class="myCartSubtotal">Subtotal: <span>{{subtotal | currency}}</span></div>
+        <div class="myCartTax">Tax: <span>{{}}</span></div>
+        <div class="myCartTotal">Total: <span>{{}}</span></div>
+        <div class="myCartCheckout">CHECKOUT</div>
       </div>
     </div>
   </div>
-
-  <div class="cartSubtotal">
-    <h2 class="subTotal">Subtotal: {{subtotal | currency}}</h2>
-    <h4 class="subTotalText">Discounts, shipping and tax will be calculated in checkout.</h4>
-    <button class='checkOut' type="button" name="button" ng-click="finalizeOrder()">Checkout</button>
-  </div>
-
-</div>
 </div>
 <footer-directive></footer-directive>

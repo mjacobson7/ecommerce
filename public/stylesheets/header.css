@@ -1,3 +1,6 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
 
 .flexContainer {
   display: flex;
@@ -30,6 +33,7 @@
   font-family: 'Montserrat', sans-serif;
   color: #A29C9C;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .headerLogo {

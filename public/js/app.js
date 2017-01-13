@@ -70,16 +70,6 @@ angular.module('myApp', ['ui.router', 'ngAlertify'])
         url: '/cart',
         templateUrl: '../features/cart/cart.html',
         controller: 'cartCtrl',
-        resolve: {
-          cart: function(mainService, $state, alertify) {
-            mainService.authCart().then(function(response) {
-              if(response.data === 'fail') {
-                $state.go('login');
-                alertify.delay(5000).logPosition('bottom right').error('You must first log in to view your cart');
-              }
-            })
-          }
-        }
       })
 
       .state('demo', {

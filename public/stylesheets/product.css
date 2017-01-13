@@ -27,7 +27,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  border: 1px solid #dedede;
 }
 
 .topRowDiv {
@@ -123,40 +122,26 @@
   font-family: 'Montserrat', sans-serif;
   word-wrap: break-word;
   width: 100%;
-  text-align: center;
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
 .productViewPrice {
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
-}
-
-.productViewDescriptionContainer {
-
-  overflow-x: scroll;
-  height: auto;
-  width: 900px;
-  background-color: #fff;
-  border: 1px solid #000;
-  margin-bottom: 50px;
-  margin-top: 10px;
-  text-align: left;
-  /*word-wrap: break-word;*/
-  align-self:flex-end;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .productViewCart {
-  background-color: #F1F1F1;
+  background-color: #F7F7F7;
   height: auto;
-  width: 420px;
+  width: 320px;
+  height: 430px;
   font-family: 'Montserrat', sans-serif;
+  padding: 20px;
   display: flex;
-  /*flex-direction: column;*/
-  flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
 }
 
 .productViewCart h3 {
@@ -165,10 +150,6 @@
 
 .productViewCart ul li {
   list-style: none;
-}
-
-.productViewQuantity {
-
 }
 
 .productViewColor {
@@ -209,14 +190,7 @@
 }
 
 .productViewTotal {
-  font-size: 30px;
-}
-
-.productViewDescriptionTitle {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #F1F1F1;
-  width: 100%;
-  padding: 5px;
+  font-size: 20px;
 }
 
 #backToProducts {
@@ -235,5 +209,39 @@
 }
 
 #quantityForm {
-  width: 290px;
+  outline: none;
+  text-decoration: none;
+  background-color: #eaeaea;
+  width: 50px;
+  height: 25px;
+  padding 5px 10px;
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  border-bottom: none;
+  text-align: center;
+}
+
+.productViewDescription {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.addToCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  background-color: #f36564;
+  width: 270px;
+  height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+}
+
+.addToCart:hover {
+  background-color: #ef3635;
+  transition: 0.5s;
 }

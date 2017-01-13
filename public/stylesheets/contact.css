@@ -27,6 +27,7 @@ height: 40px;
 margin-top: 5px;
 margin-left: 35px;
 outline: none;
+font-family: 'Montserrat', sans-serif;
 }
 
 .contactContainer textarea {
@@ -37,6 +38,7 @@ outline: none;
   margin-top: 5px;
   margin-left: 35px;
   outline: none;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .contactContainer button {
@@ -46,6 +48,7 @@ margin-left: 35px;
 background-color: #fff;
 border: 1px solid #DEDEDE;
 outline: none;
+font-family: 'Montserrat', sans-serif;
 }
 
 .contactContainer button:active {
@@ -58,67 +61,3 @@ margin-top: 15px;
 margin-left: 35px;
 font-family: 'Montserrat', sans-serif;
 }
-
-
-
-/*@media screen and (max-width:650px) {
-
-.contactPage {
-  height: 700px;
-  width: 100%;
-  background-image: url("../assets/contactus.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  background-position: center;
-}
-
-.contactContainer {
-  border: 1px solid #DEDEDE;
-  background-color: #fff;
-  border-radius: 5px;
-  height: 400px;
-  width: 300px;
-  position: absolute;
-  left: 50px;
-  top: 175px;
-}
-
-.contactContainer input {
-width: 80%;
-height: 40px;
-margin-top: 5px;
-margin-left: 35px;
-outline: none;
-}
-
-.contactContainer textarea {
-  width: 80%;
-  height: 120px;
-  max-height: 140px;
-  margin-top: 5px;
-  margin-left: 35px;
-  outline: none;
-}
-
-.contactContainer button {
-width: 80px;
-height: 40px;
-margin-left: 35px;
-background-color: #fff;
-border: 1px solid #DEDEDE;
-outline: none;
-}
-
-.contactContainer button:active {
-color: #fff;
-background-color: #000;
-}
-
-.contactContainer h3 {
-margin-top: 15px;
-margin-left: 35px;
-font-family: 'Montserrat', sans-serif;
-}
-
-}*/

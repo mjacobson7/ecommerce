@@ -1,9 +1,10 @@
 angular.module('myApp')
-  .controller('cartCtrl', function($rootScope, $scope, mainService, $state) {
+  .controller('cartCtrl', function($scope, mainService, $state, alertify) {
 
     var getUser = function() {
       mainService.getUser().then(function(response) {
         if(response) {
+          $scope.user = response.data;
           var user = response.data;
           $scope.getCartItems(user);
         } else {
@@ -29,18 +30,40 @@ angular.module('myApp')
         });
       } else {
         var noSessionCart = mainService.noSessionCart();
-        console.log(noSessionCart);
         $scope.products = noSessionCart;
+        var subtotal = mainService.getSubtotal();
+        $scope.subtotal = subtotal;
+        var tax = mainService.getTax(subtotal);
+        $scope.tax = tax;
+        var total = mainService.getTotal(subtotal, tax);
+        $scope.total = total;
 
       }
     };
 
     $scope.finalizeOrder = function() {
-      $state.go('demo');
-      var id = $rootScope.user._id;
-      mainService.emptyCart(id).then(function(response) {
-        console.log(response);
-      });
+      if($scope.products < 1) {
+        alertify.delay(5000).logPosition('bottom right').error('Please add a product to your cart!');
+      } else {
+        if($scope.user) {
+          // $state.go('demo');
+          var id = $scope.user._id;
+          mainService.emptyCart(id);
+        } else {
+          $scope.products.length = 0;
+          $scope.subtotal = 0;
+          $scope.tax = 0;
+          $scope.total = 0;
+          // $state.go('demo');
+        }
+
+      }
+
+    }
+
+    $scope.deleteItem = function(index) {
+      $scope.products.splice(index,1);
+
     }
 
 

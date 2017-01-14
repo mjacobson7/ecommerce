@@ -143,7 +143,7 @@ angular.module('myApp')
     };
 
     var cart = [];
-    var subTotal = 0;
+    var subtotal = 0;
     var tax = 0;
     var total = 0;
 
@@ -155,5 +155,22 @@ angular.module('myApp')
         return cart;
       }
     };
+
+    this.getSubtotal = function() {
+      for(var i = 0; i < cart.length; i++) {
+        subtotal += cart[i].price;
+      }
+      return subtotal;
+    }
+
+    this.getTax = function(subtotal) {
+      tax = subtotal * 0.0685;
+      return tax;
+    }
+
+    this.getTotal = function(subtotal, tax) {
+      total = tax + subtotal;
+      return total;
+    }
 
   }); //end

@@ -5,24 +5,24 @@
     <div class="cartTitle">Your Cart</div>
     <div class="cartPageContainer">
       <div class="cartContainer">
-        <div class="cartProduct" ng-repeat="item in products">
+        <div class="cartProduct" ng-repeat="item in products track by $index">
           <img class="cartItemImage" ng-src="{{item.image1}}" alt="">
           <div class="titleAndDescription">
             <div class="cartItemName">{{item.title}}</div>
             <div class="cartItemDescription">{{item.description}}</div>
           </div>
-          <input id="cartItemQuantity" type="number" min="1" name="" value="{{item.quantity}}">
+          <input id="cartItemQuantity" type="number" min="1" name="" value="{{item.quantity}}" readonly>
           <div class="multipliedBy">x</div>
           <div class="cartItemPrice">{{item.price | currency}}</div>
-          <div class="deleteCartItem"><i class="material-icons">delete</i></div>
+          <div class="deleteCartItem" ng-click="deleteItem($index)"><i class="material-icons">delete</i></div>
         </div>
       </div>
       <div class="cartSummary">
         <div class="cartSummaryTitle">Summary</div>
         <div class="myCartSubtotal">Subtotal: <span>{{subtotal | currency}}</span></div>
-        <div class="myCartTax">Tax: <span>{{}}</span></div>
-        <div class="myCartTotal">Total: <span>{{}}</span></div>
-        <div class="myCartCheckout">CHECKOUT</div>
+        <div class="myCartTax">Tax: <span>{{tax | currency}}</span></div>
+        <div class="myCartTotal">Total: <span>{{total | currency}}</span></div>
+        <div class="myCartCheckout" ng-click="finalizeOrder()">CHECKOUT</div>
       </div>
     </div>
   </div>
